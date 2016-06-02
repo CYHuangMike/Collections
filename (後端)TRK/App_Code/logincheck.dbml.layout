@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="logincheck">
+  <DataContextMoniker Name="/logincheckDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dba49bb7-1346-45cd-bdf2-4445309c606f" absoluteBounds="1.125, 0.875, 2, 1.1939925130208331">
+      <DataClassMoniker Name="/logincheckDataContext/Classfication" />
+      <nestedChildShapes>
+        <elementListCompartment Id="34aa4ffc-b448-4c16-82ac-ecc9685a4556" absoluteBounds="1.1400000000000001, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ca82ba82-cabf-4c24-a7be-840caa7d819a" absoluteBounds="6.875, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/logincheckDataContext/Account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="348758d7-e230-4c2c-9add-5286ae54cdbc" absoluteBounds="6.8900000000000006, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31c276ae-982b-4b18-987b-e4308e0cbe63" absoluteBounds="6.75, 4.625, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/logincheckDataContext/Coupon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a7dc9ed-0e11-4394-ad81-eb067e3529be" absoluteBounds="6.765, 5.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="84b4292a-4287-4ad2-a28f-312a8f954310" absoluteBounds="4.375, 1.75, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/logincheckDataContext/Company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ddb4a21-229f-4768-9922-3d101a00070c" absoluteBounds="4.39, 2.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.875 : 1.19314697265625); (5.375 : 1.19314697265625); (5.375 : 1.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/logincheckDataContext/Account/Account_Company" />
+      <nodes>
+        <classShapeMoniker Id="ca82ba82-cabf-4c24-a7be-840caa7d819a" />
+        <classShapeMoniker Id="84b4292a-4287-4ad2-a28f-312a8f954310" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cdcf171f-f878-4e53-a172-92de47cd4056" absoluteBounds="7.125, 2.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/logincheckDataContext/Facility" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45396765-381a-4cde-9a79-e91bd47981ee" absoluteBounds="7.14, 3.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.9375 : 4.20359537760417); (7.9375 : 4.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/logincheckDataContext/Facility/Facility_Coupon" />
+      <nodes>
+        <classShapeMoniker Id="cdcf171f-f878-4e53-a172-92de47cd4056" />
+        <classShapeMoniker Id="31c276ae-982b-4b18-987b-e4308e0cbe63" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.125 : 3.41429768880208); (6.375 : 3.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/logincheckDataContext/Facility/Facility_Company" />
+      <nodes>
+        <classShapeMoniker Id="cdcf171f-f878-4e53-a172-92de47cd4056" />
+        <classShapeMoniker Id="84b4292a-4287-4ad2-a28f-312a8f954310" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="8b2aff61-30a1-41f1-ae43-c97cb918f418" absoluteBounds="4.125, 5.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/logincheckDataContext/Counters" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ad4c1ee6-b30e-4fc0-b23b-5b3822a181af" absoluteBounds="4.14, 5.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.25 : 4.67470540364583); (5.25 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/logincheckDataContext/Company/Company_Counters" />
+      <nodes>
+        <classShapeMoniker Id="84b4292a-4287-4ad2-a28f-312a8f954310" />
+        <classShapeMoniker Id="8b2aff61-30a1-41f1-ae43-c97cb918f418" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.96875 : 4.20359537760417); (8.96875 : 7.02809895833333); (6.125 : 7.02809895833333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/logincheckDataContext/Facility/Facility_Counters" />
+      <nodes>
+        <classShapeMoniker Id="cdcf171f-f878-4e53-a172-92de47cd4056" />
+        <classShapeMoniker Id="8b2aff61-30a1-41f1-ae43-c97cb918f418" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="61a0b26e-d284-4192-9ff2-761e97bc3414" absoluteBounds="1.125, 2.875, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/logincheckDataContext/Promotions" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b50e95a-b16c-4237-b149-a9c5eb0d71db" absoluteBounds="1.1400000000000001, 3.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.125 : 2.06899251302083); (2.125 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/logincheckDataContext/Classfication/Classfication_Promotions" />
+      <nodes>
+        <classShapeMoniker Id="dba49bb7-1346-45cd-bdf2-4445309c606f" />
+        <classShapeMoniker Id="61a0b26e-d284-4192-9ff2-761e97bc3414" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 3.77485270182292); (3.125 : 3.77485270182292)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/logincheckDataContext/Company/Company_Promotions" />
+      <nodes>
+        <classShapeMoniker Id="84b4292a-4287-4ad2-a28f-312a8f954310" />
+        <classShapeMoniker Id="61a0b26e-d284-4192-9ff2-761e97bc3414" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

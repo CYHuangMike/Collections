@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.manu.Tour.RestaurantFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/newsDetailLayout"
+        >
+
+        <ImageView
+            android:id="@+id/NewsImage"
+            android:layout_weight="5"
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:scaleType="fitXY" />
+        <TextView
+            android:id="@+id/NTitle"
+            android:layout_weight="3"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:text="草衙道會員卡 會員招募中"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:id="@+id/NStartDate"
+                android:layout_weight="2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:text="2016/5/19"
+                android:textStyle="bold"/>
+            <TextView
+
+                android:layout_weight="2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="25dp"
+                android:text="-"
+                android:textStyle="bold"
+                android:gravity="center" />
+            <TextView
+                android:id="@+id/NEndDate"
+                android:layout_weight="2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="25dp"
+                android:text="-2016/06/10"
+                android:textStyle="bold"
+                android:gravity="center" />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/NContent"
+            android:layout_weight="2"
+
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="1. 紅利集點/現抵消費"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal" />
+
+
+
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

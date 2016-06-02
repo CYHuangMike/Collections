@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" ; />
+    <title>@ViewBag.Title - TRK首頁</title>
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Bootstrap -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="~/Scripts/bootstrap.min.js" rel="stylesheet" />
+    <link href="~/Content/styles.css" rel="stylesheet" />
+    <link href="~/Content/queries.css" rel="stylesheet" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+    <!-- Fonts -->
+    <link href='http://fonts.useso.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <link href="~/Content/mCss.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.impulse.slider-0.1.js"></script>
+    <script src="~/Scripts/mScrip.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <header class="clearfix">
+            <div class="logo col-md-3"><h2 class="logo-text">大魯閣草衙道</h2></div>
+            <nav class="clearfix">
+                <ul class="clearfix">
+                    <li class="active">@Html.ActionLink("首頁", "Index", "Home")</a></li>
+                    <li>@Html.ActionLink("最新活動", "Promotions", "NEWS")</li>
+                    <li>@Html.ActionLink("樓層導覽", "LayerInfo", "MAPS", new { @build = 'E', @layer = '1' }, null)</li>
+                    <li>@Html.ActionLink("品牌搜尋", "Search", "Brand", new { @id = 99 }, null)</li>
+                    <li>@Html.ActionLink("曼麗卡專區", "ManliCard", "ManliCard")</li>
+                    <li>@Html.ActionLink("交通資訊", "Index", "MAPS")</li>
+                    <li><a href="#" class="last">contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        @RenderBody()
+    </div>
+        <footer class="container-fluid text-center">
+            <p>806高雄市前鎮區中山四路100號</p>
+            <p>週一至週四 11:00~22:00 / 週五11:00~22:30 / 週六10:30~22:30 / 週日10:30~22:00 / 特殊營業時間除外</p>
+            <p>Designed by 資訊工業策進會 南區訓練中心87期第二組向心團</p>
+        </footer>  
+    <script src="~/Scripts/unslider.min.js"></script>
+    <style>
+        h3 {
+            color: #35998E;
+        }
+
+        h1 {
+            color: #35998E;
+            text-align: center;
+        }
+
+        .modal-header {
+            background-color: #57BBB0;
+            color: #FFF;
+            font-size: 25px;
+        }
+
+        header {
+            padding: 10px;
+        }
+
+        p1 {
+            color: #000000;
+            font-family: 'Microsoft JhengHei';
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        #wrapper {
+            min-height: 100%;
+            /* 位置設為relative, 作為footer區塊位置的參考 */
+            position: relative;
+        }
+
+        body {
+            padding: 10px;
+            padding-bottom:0px; /* Height of the footer */
+        }
+
+        footer {
+            background-color: #63C6AE;
+            color: #FFF;
+            position: absolute;
+            width: 100%;
+            height: 25px; /* Height of the footer */
+        }
+
+    </style>
+    @Scripts.Render("~/boundlse/jquery")
+    @Scripts.Render("~/Scripts/bootstrap.js")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 未按下時 -->
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle" >
+            <!-- 顏色 -->
+            <solid android:color="#57BBB0" />
+            <!-- 按鈕的外觀為圓角 -->
+            <!-- android:radius 弧形半徑 -->
+            <corners android:radius="25dip" />
+            <!-- padding：Button文字與邊界的間隔 -->
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#35998E" />
+            <corners android:radius="25dip" />
+        </shape>
+    </item>
+</selector>

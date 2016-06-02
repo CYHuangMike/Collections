@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ViewNews>
+@{
+    ViewBag.Title = "News";
+}
+
+<!--title-->
+<div class="container-fluid">
+    <h1>最新活動</h1>
+    <hr />
+    <br />
+    <div class="container text-centerr">
+        <a href="@Url.Action("Promotions", "NEWS")">
+
+            <img src="~/Images/news/Promotions.jpg" />
+        </a>
+        <a href="@Url.Action("News", "NEWS")">
+
+            <img src="~/Images/news/news.jpg" />
+
+        </a>
+
+    </div><br /><br />
+
+    <div class="container" style="float:left">
+        <div class="row">
+            @{
+                foreach (ViewNews news in @Model)
+                {
+                    <div class="col-xs-12 col-md-3 col-sm-6">
+                        <div class="ca-hover " role="button" data-toggle="modal" data-target="#@news.活動ID" target="_parent" width="250" height="400">
+                            <div class="carousel-img">
+                                <img src="@ViewBag.path@news.圖片路徑" alt="Carousel Img" />
+                            </div>
+                            <div class="carousel-avatar av1">
+                            </div>
+                            <div class="carousel-content">
+                                <h3>@news.標題</h3>
+                                <p>@news.開始日期~@news.結束日期</p>
+                            </div>
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                    @*彈跳視窗*@
+                    <div class="modal fade" id="@news.活動ID" role="dialog">
+                        <div class="modal-dialog modal-md">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">@news.標題</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h1>活動日期:@news.開始日期~@news.結束日期</h1>
+                                    <hr />
+                                    <h1>地點位置:@news.廠商</h1>
+                                    <hr />
+                                    <div align="center">
+                                        <img src="@ViewBag.path@news.圖片路徑"  class="img-responsive" alt="Responsive image"/>
+                                    </div>
+  
+                                    <p class="text-left" style="font-size:20px;color:#35998E">說明:@news.內容</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<br/>
+<br />

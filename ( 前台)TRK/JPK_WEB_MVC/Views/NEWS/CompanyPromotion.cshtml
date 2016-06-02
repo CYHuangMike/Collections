@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ViewPromotions>
+@{
+    ViewBag.Title = "CompanyPromotion";
+}
+<div class="container" style="float:left">
+    <div class="row">
+        @{
+            foreach (ViewPromotions news in @Model)
+            {
+
+                <div class="col-xs-12 col-md-3 col-sm-6">
+                    <div class="ca-hover " role="button" data-toggle="modal" data-target="#@news.活動ID" target="_parent" width="250" height="400">
+                        <div class="carousel-img">
+                            <img src="@ViewBag.path@news.圖片路徑" alt="Carousel Img" />
+                        </div>
+                        <div class="carousel-content">
+                        </div>
+                        <div class="carousel-content">
+                            <h3>@news.標題</h3>
+                            <p>@news.開始日期~@news.結束日期</p>
+                        </div>
+                        <div class="overlay"></div>
+                    </div>
+                </div>                  
+            }
+        }
+    </div>
+</div>
+
+
+
+
+

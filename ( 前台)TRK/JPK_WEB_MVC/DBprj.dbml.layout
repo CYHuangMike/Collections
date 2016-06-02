@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.125, 8.5" name="DBprj">
+  <DataContextMoniker Name="/DBprjDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3a7d4eeb-bed6-4653-9837-9b3b6b5fd225" absoluteBounds="6.875, 2.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DBprjDataContext/ManliCard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e80b7fe3-708d-4e55-9a39-c099b6a87e32" absoluteBounds="6.89, 2.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eda3d1a4-efc2-4f3b-b120-627138a47bc4" absoluteBounds="0.875, 3.125, 2, 3.1170068359375">
+      <DataClassMoniker Name="/DBprjDataContext/ViewCompanies_Shopping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="85119530-e575-4d64-947e-768bbaf997e2" absoluteBounds="0.88999999999999968, 3.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d68b8200-00d4-4608-a6df-f6d1d2e944f5" absoluteBounds="9.875, 4.875, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DBprjDataContext/View_Company_CounterAll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17d68b9b-2068-48c9-8751-ba79c597f2f4" absoluteBounds="9.89, 5.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="63350445-6323-4f4e-8bf3-debfca79e6f9" absoluteBounds="4.875, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DBprjDataContext/ViewNews" />
+      <nestedChildShapes>
+        <elementListCompartment Id="122f7107-314f-4dc7-9877-b10721942c89" absoluteBounds="4.89, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b93e6643-4d54-4f84-acc9-7d74051bfc73" absoluteBounds="2.375, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DBprjDataContext/ViewPromotions" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aae79fe4-d197-4a34-be90-31571a8ae97b" absoluteBounds="2.3899999999999997, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,161 @@
+﻿@model IEnumerable<ManliCard>
+@{
+    ViewBag.Title = "ManliCard";
+}
+<!--icon-->
+<div class="container text-center">
+    <h1>曼麗卡專區</h1>
+    <hr />
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="#search">
+                <img src="~/Images/manlicard/magnifier.jpg" width="200" height="200" alt="Random Name" title="Apple">
+                <p><strong>點數查詢</strong></p>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="#member">
+                <img src="~/Images/manlicard/shop.jpg" width="200" height="200" alt="Random Name" title="AAA">
+                <p><strong>會員需知</strong></p>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="#news">
+                <img src="~/Images/manlicard/hot-price.jpg" width="200" height="200" alt="Random Name" title="AIGLE">
+                <p><strong>最新卡友優惠</strong></p>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a href="#change">
+                <img src="~/Images/manlicard/gift.jpg" width="200" height="200" alt="Random Name" title="ARMANI OUTLET">
+                <p><strong>點數換好禮</strong></p>
+            </a>
+        </div>
+    </div>
+</div>
+<!--點數查詢-->
+<div class="container text-center">
+    <div class="row">
+        <div calss="panel" style="background: -webkit-linear-gradient(-45deg,  #35998e 1%,#57BBB0 30%,#ffffff 100%,#ffffff 100%,#ffffff 100%); padding:5px">
+            <a id="search"><h3 style="color:#ffffff">點數查詢</h3></a>
+        </div>
+        <br>
+        <form method="post" action="ManliCard" class="form-inline" role="form">
+            <div class="col-sm-6">
+                <div class="well">
+                    <div class="form-group">
+                        <label>您的卡號:</label>
+                        <input type="text" class="form-control" name="txtNum" required="required">
+                        <button type="submit" class="btn btn-default">送出</button>
+                    </div>
+                </div>
+                <div class="well">
+                    @{
+                        if (@Model != null)
+                        {
+                            foreach (ManliCard point in @Model)
+                            {
+                                <div class="container text-center">
+                                    <p class="text-center">您的點數: @point.cardPoint</p>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+                <a id="mamlicard"> <img src="~/Images/manlicard/member.jpg" class="img-responsive" alt="Image"></a>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-sm-4">
+                    <a href="#mamlicard">
+                        <img src="~/Images/manlicard/membercard.jpg" class="img-responsive" alt="Image" style="margin:0px auto" />
+                        <p><strong>草衙道曼麗卡</strong></p>
+                    </a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#creditcard">
+                        <img src="~/Images/manlicard/creditcard3.jpg" class="img-responsive" alt="Image" style="margin:0px auto" />
+                        <p><strong>草衙道聯名卡</strong></p>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div class="container text-center">
+    <div class="row">
+        <div class="panel">
+            <div calss="panel" style="background: -webkit-linear-gradient(-45deg,  #35998e 1%,#57BBB0 30%,#ffffff 100%,#ffffff 100%,#ffffff 100%); padding:5px">
+                <a id="member"><h3 style="color:#ffffff">會員需知</h3></a>
+            </div>
+            <br />
+            <p1>
+                【如何加入】<br>
+                只要年滿15歲以上，本人親自攜帶身分證(外籍人士申辦需出示中華民國居留證)及iPASS一卡通或一卡通聯名卡，並填妥申請書至二樓卡友服務中心免費申辦，立即享有各項專屬會員優惠!
+            </p1>
+            <p1>
+                【如何集點】<br>
+                1.於大魯閣草衙道每次消費結帳前出示本卡並交予結帳人員，即可累積點數。<br>
+                2.當日單筆消費發票金額累積點數至小數點第2位，單筆消費滿100元即可累積1點、199元可累積點數1.99點，以此類推。<br>
+                3.點數有效期限為兩年，逾期點數將自動歸零，不另通知。如：會員於2016年3月28日累積之點數，將於2018年12月31日後自動歸零。
+            </p1>
+            <p1>
+                【點數查詢】<br>
+                會員想要知道目前累積的點數，可於二樓卡友服務中心、全館i曼麗(KIOSK多功能自動導覽查詢機)及「大魯閣MALL」APP查詢。
+            </p1>
+        </div>
+        <div calss="panel" style="background: -webkit-linear-gradient(-45deg,  #35998e 1%,#57BBB0 30%,#ffffff 100%,#ffffff 100%,#ffffff 100%); padding:5px">
+            <a id="news"><h3 style="color:#ffffff">最新卡友優惠</h3></a>
+        </div>
+        <br />
+        <p1>
+            <img src="~/Images/manlicard/banner.jpg" class="img-responsive" alt="Image" style="margin:0px auto">
+            <br>
+            【兌換步驟】<br>
+        </p1>
+
+        <p style="color:#000000">step1:於指定優惠日至館內「i曼麗(KIOSK)」選定【會員專區】，並將曼麗卡放至感應區，點選【點數好禮】。</p>
+        <p style="color:#000000">step2:請在【週一~週四卡友好康日】選擇指定日當日優惠。</p>
+        <p style="color:#000000">step3:選定優惠並扣除會員點數5點，將跑出當日優惠券，即可持本券前往指定櫃位享有優惠。</p>
+        <p style="color:#000000">週一 家庭日」:遊戲愛樂園 入園現折50元(每週限量50名)</p>
+        <p style="color:#000000">「週二 曼麗日」:紅利點數2倍送(含原先消費點數)</p>
+        <p style="color:#000000">「週三 分享日」:國賓影城 購買碳酸飲料、爆米花5折(每週限量200份)</p>
+        <p style="color:#000000">「週四 運動日」:a.迷你鈴鹿賽道(卡丁車)8折(每週限量100名)</p>
+        <p style="color:#000000">b.大魯閣打擊場 代幣消費買200元送100元(每週限量200份)</p>
+        <p style="color:#000000">c.滾吧!保齡球館 買2局送1局(每週限量150份)</p>
+        <p style="color:#000000"> (活動有效期限至2016/12/31止)</p>
+        <br />
+        <div calss="panel" style="background: -webkit-linear-gradient(-45deg,  #35998e 1%,#57BBB0 30%,#ffffff 100%,#ffffff 100%,#ffffff 100%); padding:5px">
+            <a id="change"><h3 style="color:#ffffff">點數換好禮</h3></a>
+        </div>
+        <br />
+        <p>
+            <img src="~/Images/manlicard/copon.jpg" class="img-responsive" alt="Image" style="margin:0px auto">
+        </p>
+        <br />
+        <div calss="panel" style="background: -webkit-linear-gradient(-45deg,  #35998e 1%,#57BBB0 30%,#ffffff 100%,#ffffff 100%,#ffffff 100%); padding:5px">
+            <a id="creditcard"><h3 style="color:#ffffff">聯名卡活動</h3></a>
+        </div>
+        <br />
+        <h4>【卡友禮遇】</h4>
+        <p style="color:#000000">
+            購物享分期 零利率無負擔<br>
+            合作期間內持配合銀行信用卡(不含VISA金融卡/美國運通卡/ 花旗大來卡)
+        </p>
+        <p style="color:#000000">
+            於大魯閣草衙道館內單筆刷卡滿3,000元，可享3期0利率
+        </p>
+        <p style="color:#000000">
+            單筆消費滿6,000元可享6期0利率
+        </p>
+
+        <p style="color:#000000">
+            單筆消費滿12,000元可享12期0利率
+        </p>
+
+        <p style="color:#000000">  讓您消費輕鬆無負擔！</p>
+        <p>
+            <img src="~/Images/manlicard/creditcard.jpg" class="img-responsive" alt="Image" style="margin:0px auto">
+        </p>
+    </div>
+</div>

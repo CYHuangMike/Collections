@@ -1,0 +1,97 @@
+﻿@model JPK_WEB_MVC.ViewModels.LayerInfoVM
+@{
+    ViewBag.Title = "TestLayerInfo";
+    ViewBag.path = "http://prjtrk.azurewebsites.net/pic/";
+    ViewBag.mpath = "http://prjtrk.azurewebsites.net/mpic/";
+}
+<!--樓層選擇-->
+        <div class="col-sm-3 sidenav">
+            <div class="container">
+                <!--東西側選擇-->
+                <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="pill" href="#home">大道西</a></li>
+                    <li><a data-toggle="pill" href="#menu1">大道東</a></li>
+                </ul>
+                <!--樓層選擇-->
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <h3>&nbsp;</h3>
+                        <div class="container">
+                            <ul class="nav nav-pills">
+
+                                @{
+                                    for (int i = 1; i <= 3; i++)
+                                    {
+                                        <li>
+                                            @Html.ActionLink(@i + "F",
+                                    "LayerInfo",
+                                    "MAPS",
+                                    new { @build = "W", @layer = @i },
+                                     null)
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                            <div class="tab-content">
+                                <div id="home" class="tab-pane fade in active">
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li>
+                                            @{
+
+                                                foreach (var item in Model.getLayerInfo)
+                                                {
+
+                                                    @Html.ActionLink(@item.廠商名稱,
+                                "LayerInfo",
+                                "MAPS",
+                                new { @build = @item.建築物, @layer = @item.樓層, @companyID = @item.廠商編號 },
+                                null)
+
+                                                }
+
+                                            }
+                                        </li>
+                                    </ul>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div id="menu1" class="tab-pane fade">
+                        <h3>大道東</h3>
+                      
+                    </div>
+                </div>
+            </div>
+</div>

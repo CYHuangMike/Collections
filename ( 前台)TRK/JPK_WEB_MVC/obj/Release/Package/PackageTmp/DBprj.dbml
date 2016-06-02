@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="prjTRK" Class="DBprjDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=iii0.database.windows.net;Initial Catalog=prjTRK;Persist Security Info=True;User ID=iii" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="prjTRKConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ManliCard" Member="ManliCard">
+    <Type Name="ManliCard">
+      <Column Name="cardNumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cardPoint" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewCompanies_Shopping" Member="ViewCompanies_Shopping">
+    <Type Name="ViewCompanies_Shopping">
+      <Column Name="設施種類" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="廠商ID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="廠商" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="負責人" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="電話" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="建築物" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="樓層" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="櫃位" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="簡介" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="商標圖片" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="位置圖" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="實景圖" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_Company_CounterAll" Member="View_Company_CounterAll">
+    <Type Name="View_Company_CounterAll">
+      <Column Name="廠商編號" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="廠商名稱" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="負責人" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="建築物" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="樓層" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="電話" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="位置" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="簡介" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="廠商圖示" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="位置圖" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewNews" Member="ViewNews">
+    <Type Name="ViewNews">
+      <Column Name="活動ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="廠商" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="標題" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="內容" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="位址" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="開始日期" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="結束日期" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="發布日期" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="分類" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="圖片路徑" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewPromotions" Member="ViewPromotions">
+    <Type Name="ViewPromotions">
+      <Column Name="活動ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="廠商" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="標題" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="內容" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="位址" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="開始日期" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="結束日期" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="發布日期" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="分類" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="圖片路徑" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.manu.Tour.RestaurantFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+    <TextView
+        android:layout_weight="2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:text="品牌介紹"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/CompanyLogo"
+        android:layout_weight="5"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+        android:scaleType="fitXY" />
+    <TextView
+        android:id="@+id/CompanyName"
+        android:layout_weight="3"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="45dp"
+        android:text="佐佐義"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/CompanyContent"
+        android:layout_weight="2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="絕搭的組合，美食饗宴"
+        android:gravity="center" />
+
+
+    <TextView
+        android:id="@+id/CompanyAddr"
+        android:layout_weight="2"
+        android:layout_centerInParent="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="專櫃位置：大道東一樓 A01"
+        android:gravity="center" />
+    <TextView
+        android:id="@+id/CompanyPhone"
+        android:layout_weight="2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="專櫃電話：07-7915555"
+        android:gravity="center" />
+
+        </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

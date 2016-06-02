@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="prjTRK" Class="logincheckDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=iii0.database.windows.net;Initial Catalog=prjTRK;User ID=iii" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="prjTRKConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Classfication" Member="Classfication">
+    <Type Name="Classfication">
+      <Column Name="classifyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="item" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Classfication_Promotions" Member="Promotions" ThisKey="classifyID" OtherKey="classifyID" Type="Promotions" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Account" Member="Account">
+    <Type Name="Account">
+      <Column Name="account" Member="account1" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="authority" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Account_Company" Member="Company" ThisKey="account1" OtherKey="email" Type="Company" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Coupon" Member="Coupon">
+    <Type Name="Coupon">
+      <Column Name="couponID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="qrCode" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="facilityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="counts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Facility_Coupon" Member="Facility" ThisKey="facilityID" OtherKey="facilityID" Type="Facility" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Company" Member="Company">
+    <Type Name="Company">
+      <Column Name="companyID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="manager" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sparEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="addr" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="picBrandPath" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pic360ViewPath" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="facilityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Company_Counters" Member="Counters" ThisKey="companyID" OtherKey="companyID" Type="Counters" />
+      <Association Name="Company_Promotions" Member="Promotions" ThisKey="companyID" OtherKey="companyID" Type="Promotions" />
+      <Association Name="Account_Company" Member="Account" ThisKey="email" OtherKey="account1" Type="Account" IsForeignKey="true" />
+      <Association Name="Facility_Company" Member="Facility" ThisKey="facilityID" OtherKey="facilityID" Type="Facility" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Facility" Member="Facility">
+    <Type Name="Facility">
+      <Column Name="facilityID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pic" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Facility_Coupon" Member="Coupon" ThisKey="facilityID" OtherKey="facilityID" Type="Coupon" />
+      <Association Name="Facility_Company" Member="Company" ThisKey="facilityID" OtherKey="facilityID" Type="Company" />
+      <Association Name="Facility_Counters" Member="Counters" ThisKey="facilityID" OtherKey="facilityID" Type="Counters" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Counters" Member="Counters">
+    <Type Name="Counters">
+      <Column Name="building" Type="System.String" DbType="NVarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="layer" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="counterNum" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="companyID" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="picLocation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="available" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="facilityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Company_Counters" Member="Company" ThisKey="companyID" OtherKey="companyID" Type="Company" IsForeignKey="true" />
+      <Association Name="Facility_Counters" Member="Facility" ThisKey="facilityID" OtherKey="facilityID" Type="Facility" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Promotions" Member="Promotions">
+    <Type Name="Promotions">
+      <Column Name="activityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="companyID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="classifyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="picPath" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="startDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="endDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="statusID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="onShelfDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Classfication_Promotions" Member="Classfication" ThisKey="classifyID" OtherKey="classifyID" Type="Classfication" IsForeignKey="true" />
+      <Association Name="Company_Promotions" Member="Company" ThisKey="companyID" OtherKey="companyID" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

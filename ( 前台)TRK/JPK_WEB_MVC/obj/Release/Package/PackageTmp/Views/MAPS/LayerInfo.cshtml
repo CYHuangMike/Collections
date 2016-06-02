@@ -1,0 +1,171 @@
+﻿@model JPK_WEB_MVC.ViewModels.LayerInfoVM
+
+@*@model IEnumerable<View_Company_CounterAll>*@
+@{
+    ViewBag.Title = "LayerInfo";
+    ViewBag.path = "http://prjtrk.azurewebsites.net/pic/";
+    ViewBag.mpath = "http://prjtrk.azurewebsites.net/mpic/";
+
+}
+
+<!--東西館選擇-->
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-sm-3 sidenav">
+            <div class="container">
+                <!--東西側選擇-->
+                <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="pill" href="#home">大道東</a></li>
+                    <li><a data-toggle="pill" href="#menu1">大道西</a></li>
+                </ul>
+                <!--樓層選擇-->
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <h3>&nbsp;</h3>
+                        <div class="container">
+                            <ul class="nav nav-pills">
+
+                                @{
+                                    for (int i = 1; i <= 3; i++)
+                                    {
+                                        <li>
+                                            @Html.ActionLink(@i + "F",
+                                    "LayerInfo",
+                                    "MAPS",
+                                    new { @build = "E", @layer = @i },
+                                     null)
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                            <h3>&nbsp;</h3>
+                            <div class="tab-content">
+                                <div id="home" class="tab-pane fade in active">
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li>
+                                            @{
+
+                                                foreach (var item in Model.getLayerInfo)
+                                                {
+
+                                                    @Html.ActionLink(@item.廠商名稱,
+                                "LayerInfo",
+                                "MAPS",
+                                new { @build = @item.建築物, @layer = @item.樓層, @companyID = @item.廠商編號 },
+                                null)
+
+                                                }
+
+                                            }
+                                        </li>
+                                    </ul>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="menu1" class="tab-pane fade">
+                        <h3>&nbsp;</h3>
+                        <div class="container">
+                            <ul class="nav nav-pills">
+
+                                @{
+                                    for (int i = 1; i <= 3; i++)
+                                    {
+                                        <li>
+                                            @Html.ActionLink(@i + "F",
+                                    "LayerInfo",
+                                    "MAPS",
+                                    new { @build = "W", @layer = @i },
+                                     null)
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                            <h3>&nbsp;</h3>
+                            <div class="tab-content">
+                                <div id="home" class="tab-pane fade in active">
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li>
+                                            @{
+
+                                                foreach (var item in Model.getLayerInfo)
+                                                {
+
+                                                    @Html.ActionLink(@item.廠商名稱,
+                                "LayerInfo",
+                                "MAPS",
+                                new { @build = @item.建築物, @layer = @item.樓層, @companyID = @item.廠商編號 },
+                                null)
+
+                                                }
+
+                                            }
+                                        </li>
+                                    </ul>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <!--jquery選單-->
+           
+        </div>
+        <div class="col-sm-9">
+            <hr>
+            @{
+                if (@ViewBag.layerpath != null)
+                {   
+                    <h3>@ViewBag.layerlocation</h3>                    
+                    <img src="@ViewBag.layerpath" class="img-responsive" alt="Responsive image" width="100%" height="100%" /> 
+                }
+
+                foreach (var item in Model.getCompanyInfo)
+                {
+                    <h3 style="font-size:28px">@Html.DisplayFor(Model => item.廠商名稱)</h3>
+                    <hr>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>位置圖</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" width="400" height="225"><img src="@ViewBag.path@item.廠商圖示" class="img-responsive" alt="Responsive image" width="400" height="225" /></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+
+                                <td><img src="@ViewBag.mpath@item.位置圖" class="img-responsive" /></td>
+                            </tr>
+                            <tr>
+                                <td>位置:@Html.DisplayFor(Model => item.位置)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>連絡電話:@Html.DisplayFor(Model => item.電話)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>簡介:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">@Html.DisplayFor(Model => item.簡介)</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+            }
+        </div>
+
+    </div>
+</div>
+<br />
+

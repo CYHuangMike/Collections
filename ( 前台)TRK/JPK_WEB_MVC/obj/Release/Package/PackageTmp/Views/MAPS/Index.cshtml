@@ -1,0 +1,84 @@
+﻿@model gmaps.Models.Resort
+@{
+    ViewBag.Title = "Index";
+
+}
+<input type="button" value="請為我帶路" onclick="TellMeHowToGo();" />
+@section scripts{
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="@Url.Content("~/Scripts/gmaps.js")"></script>
+    <script type="text/javascript">
+        var origin;
+        var destination;
+        $(document).ready(function () {
+            map = new GMaps({
+                div: '#map',
+                lat: 0,
+                lng: 0
+            });
+
+            GMaps.geocode({
+                address: '@Model.Address',
+                callback: function (results, status) {
+                    if (status == 'OK') {
+                        var latlng = results[0].geometry.location;
+                        destination = [latlng.lat(), latlng.lng()];
+                        map.setCenter(latlng.lat(), latlng.lng());
+                        map.addMarker({
+                            lat: latlng.lat(),
+                            lng: latlng.lng(),
+                            title: '@Model.Title',
+                            infoWindow: {
+                                content: '<img src="@Model.LogoUrl" /><p>@Model.Address</p><a href="@Model.HomePage">@Model.HomePage</a>'
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+        function TellMeHowToGo() {
+            GMaps.geolocate({
+                success: function (position) {
+
+                    origin = [position.coords.latitude, position.coords.longitude];
+                    map.setCenter(position.coords.latitude, position.coords.longitude);
+
+                    map.addMarker({
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    });
+
+                    map.drawRoute({
+                        origin: origin,
+                        destination: destination,
+                        travelMode: 'walking',
+                        strokeColor: '#FF0088',
+                        strokeOpacity: 0.6,
+                        strokeWeight: 6
+                    });
+
+                },
+
+                error: function (error) {
+                    alert('定位失敗: ' + error.message);
+                },
+
+                not_supported: function () {
+                    alert("您的瀏覽器不支援定位功能");
+                }
+            });
+        };
+    </script>
+}
+<div id="map">
+</div>
+<style>
+    #map {
+        display: block;
+        width: 98%;
+        height: 800px;
+        margin: 0 auto;
+    }
+</style>
+

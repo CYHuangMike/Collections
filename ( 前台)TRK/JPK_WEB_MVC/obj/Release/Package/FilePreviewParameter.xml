@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="iiiTRK" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\iii\\Desktop\\\(\ 前台\)web_mvc_0524-2\\JPK_WEB_MVC\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\iii\\Desktop\\\(\ 前台\)web_mvc_0524-2\\JPK_WEB_MVC\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:iii0.database.windows.net,1433;Initial Catalog=iiiTRK_db;User Id=iii@iii0;Password=P@ssw0rd" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\iii\\Desktop\\\(\ 前台\)web_mvc_0524-2\\JPK_WEB_MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="prjTRKConnectionString-Web.config Connection String" description="" value="Data Source=tcp:iii0.database.windows.net,1433;Initial Catalog=iiiTRK_db;User Id=iii@iii0;Password=P@ssw0rd" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\iii\\Desktop\\\(\ 前台\)web_mvc_0524-2\\JPK_WEB_MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='prjTRKConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

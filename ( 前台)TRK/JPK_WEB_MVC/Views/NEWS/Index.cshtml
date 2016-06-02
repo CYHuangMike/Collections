@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ViewPromotions>
+@{
+    ViewBag.Title = "Index";
+}
+<!--title-->
+
+    <h1>最新活動</h1>
+    <hr />
+    <br />
+
+    <!--3/20新增-->
+
+    <div class="container">
+        <div class="row">
+            @{
+                foreach (ViewPromotions news in @Model)
+                {
+                    <div class="col-md-3">
+
+                        <div class="ca-hover">
+                            <div class="carousel-img">
+                                <img src="~/Images/news/news2.png" alt="Carousel Img" />
+
+                            </div>
+                            <div class="carousel-avatar av1">
+                            </div>
+                            <div class="carousel-content">
+                                <h3>@news.廠商</h3>
+                                <p>@news.標題</p>                                
+                            </div>
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                }
+
+
+
+            }
+            @*<div class="col-md-3">
+                    <div class="ca-hover">
+                        <div class="carousel-img">
+                            <img src="~/Images/news/news2.png"alt="Carousel Img" />
+
+                        </div>
+                        <div class="carousel-avatar av1">
+                        </div>
+                        <div class="carousel-content">
+                            <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                        </div>
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="ca-hover">
+                        <div class="carousel-img">
+                            <img src="~/Images/news/news1.png" alt="Carousel Img" />
+
+                        </div>
+                        <div class="carousel-avatar av2">
+                        </div>
+                        <div class="carousel-content">
+                            <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                        </div>
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="ca-hover">
+                        <div class="carousel-img">
+                            <img src="~/Images/news/news2.png" alt="Carousel Img"/>
+
+                        </div>
+                        <div class="carousel-avatar av3">
+                        </div>
+                        <div class="carousel-content">
+                            <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                        </div>
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="ca-hover">
+                        <div class="carousel-img">
+
+                            <img src="~/Images/news/news1.png" alt="Carousel Img" />
+                        </div>
+                        <div class="carousel-avatar av4">
+                        </div>
+                        <div class="carousel-content">
+                            <h3>Lorem ipsum dolor sit amet consectetur</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis suscipit est, ut imperdiet tortor. Proin sed molestie massa.</p>
+                        </div>
+                        <div class="overlay"></div>
+                    </div>
+                </div>*@
+        </div>
+    </div>
+
+

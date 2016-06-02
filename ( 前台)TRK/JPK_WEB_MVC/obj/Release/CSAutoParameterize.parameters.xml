@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-JPK_WEB_MVC-20160501112637.mdf;Initial Catalog=aspnet-JPK_WEB_MVC-20160501112637;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\iii\\Desktop\\\(\ 前台\)web_mvc_0524-2\\JPK_WEB_MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="prjTRKConnectionString-Web.config Connection String" description="prjTRKConnectionString 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="Data Source=iii0.database.windows.net;Initial Catalog=prjTRK;Persist Security Info=True;User ID=iii;Password=P@ssw0rd" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\iii\\Desktop\\\(\ 前台\)web_mvc_0524-2\\JPK_WEB_MVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='prjTRKConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

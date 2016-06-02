@@ -1,0 +1,181 @@
+﻿@model gmaps.Models.Resort
+@{
+    ViewBag.Title = "Index";
+
+}
+
+@section scripts{
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="@Url.Content("~/Scripts/gmaps.js")"></script>
+    <script type="text/javascript">
+        var origin;
+        var destination;
+        $(document).ready(function () {
+            map = new GMaps({
+                div: '#map',
+                lat: 0,
+                lng: 0
+            });
+
+            GMaps.geocode({
+                address: '@Model.Address',
+                callback: function (results, status) {
+                    if (status == 'OK') {
+                        var latlng = results[0].geometry.location;
+                        destination = [latlng.lat(), latlng.lng()];
+                        map.setCenter(latlng.lat(), latlng.lng());
+                        map.addMarker({
+                            lat: latlng.lat(),
+                            lng: latlng.lng(),
+                            title: '@Model.Title',
+                            infoWindow: {
+                                content: '<img src="@Model.LogoUrl" /><p>@Model.Address</p><a href="@Model.HomePage">@Model.HomePage</a>'
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+        function TellMeHowToGo() {
+            GMaps.geolocate({
+                success: function (position) {
+
+                    origin = [position.coords.latitude, position.coords.longitude];
+                    map.setCenter(position.coords.latitude, position.coords.longitude);
+
+                    map.addMarker({
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    });
+
+                    map.drawRoute({
+                        origin: origin,
+                        destination: destination,
+                        travelMode: 'walking',
+                        strokeColor: '#FF0088',
+                        strokeOpacity: 0.6,
+                        strokeWeight: 6
+                    });
+
+                },
+
+                error: function (error) {
+                    alert('定位失敗: ' + error.message);
+                },
+
+                not_supported: function () {
+                    alert("您的瀏覽器不支援定位功能");
+                }
+            });
+        };
+    </script>
+}
+<div class="container text-center">
+    <div class="row">
+        <div class="container-fluid">
+            <div class="container-fluid bg-3 text-center">
+                <h1><strong>如何到草衙道?</strong></h1>
+                <br>
+                <h3>地址：806高雄市前鎮區中山四路100號  (捷運草衙站2號出口)</h3>
+            </div>
+            <div id="map"></div>
+            <br />
+            <input class="btn btn-success btn-lg" type="button" value="請為我帶路" onclick="TellMeHowToGo();" />
+
+            <br />
+        </div>
+    </div>
+</div>
+<div class="container text-center">
+    <div class="row">
+        <h3>交通資訊</h3>
+        <div class="col-md-4 sidenav"></div>
+        <div class="col-md-8">
+            <ul class="nav nav-pills">
+                <li class="active">
+                    <a data-toggle="pill" href="#home">
+                        <img src="~/Images/map/car.png" title="自行開車" />
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="pill" href="#menu1">
+                        <img src="~/Images/map/bus.png" title="市內公車" />
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="pill" href="#menu2">
+                        <img src="~/Images/map/train.png" title="搭乘捷運" />
+                    </a>
+                </li>
+                <li>
+                    <a data-toggle="pill" href="#menu3">
+                        <img src="~/Images/map/highbus.png" title="國道客運" />
+                    </a>
+                </li>
+            </ul>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+
+        <div class="container text-center">
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <h3>自行開車</h3>
+                    <div class="container" style="text-align:center">
+                        <p>國道中山高速公路(中山高南下)>由中安路匝道出口>經中安路右轉大魯閣草衙道</p>
+                        <p>由小港/鳳山交流道出口左轉鳳頂路>右轉中安路>右轉大魯閣草衙道</p>
+                        <p>縣道183(由仁武、鳥松、鳳山)>行駛鳳南路右轉和成路>經明鳳三路右轉中安路>右轉大魯閣草衙道</p>
+                        <p>台17(南面由林園、東港、新園)行駛沿海路左轉中山四路>右轉中安路>左轉大魯閣草衙道</p>
+                        <p>台17(北面由鼓山、三民、前金、新興、苓雅、鹽埕、前鎮)行駛中山二/三/四路經中山路>車行地下道左轉中安路>左轉大魯閣草衙道</p>
+                        <p>省道台1縣(由大樹、大寮、九曲堂、萬丹、屏東市)>行駛中山東路左轉維武路>左轉鳳頂路>右轉中安路>右轉大魯閣草衙道</p>
+                    </div>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <h3>市內公車</h3>
+                    <div class="container" style="text-align:center">
+                        <p>紅6於「捷運草衙站」下車 > 由捷運地下連通道 > 步行至大魯閣草衙道</p>
+                        <p>紅7A、7B、7C於「捷運公司(捷運草衙站)」下車 > 步行至大魯閣草衙道</p>
+                        <p>紅9A、9B於「捷運草衙站」下車 > 由捷運地下連通道 > 步行至大魯閣草衙道</p>
+                        <p>69A、69B於「捷運公司(捷運草衙站)」下車 >步行至大魯閣草衙道</p>
+                    </div>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <h3>搭乘捷運</h3>
+                    <p>草衙站搭乘高雄捷運紅線至草衙站(2號出口)直達大魯閣草衙道</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                </div>
+                <div id="menu3" class="tab-pane fade">
+                    <h3>國道客運</h3>
+                    <p>客運高雄站轉搭乘捷運高雄站紅線至草衙站(2號出口)直達大魯閣草衙道</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<style>
+    #map {
+        display: block;
+        width: 800px;
+        height: 600px;
+        margin: 0 auto;
+    }
+
+    .nav-pills > li.active > a,
+    .nav-pills > li.active > a:hover,
+    .nav-pills > li.active > a:focus {
+        color: #000;
+        background-color: rgba(177, 238, 232,0.6);
+    }
+</style>
